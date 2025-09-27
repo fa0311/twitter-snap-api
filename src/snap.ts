@@ -1,6 +1,6 @@
-import { default as ffmpeg } from "fluent-ffmpeg";
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
+import { default as ffmpeg } from "fluent-ffmpeg";
 import { getSnapAppRenderWithCache } from "twitter-snap";
 
 type TwitterSnapConfig = {
@@ -96,7 +96,6 @@ const codes = {
   ],
 };
 
-
 const encoderCheck = (codec: string, format: string) => {
   const command = ffmpeg({
     timeout: 0,
@@ -110,11 +109,10 @@ const encoderCheck = (codec: string, format: string) => {
   command.output("/dev/null");
 
   const dump = command
-      ._getArguments()
-      .map((e) => `"${e}"`)
-      .join(' ');
+    ._getArguments()
+    .map((e) => `"${e}"`)
+    .join(" ");
   console.debug(`ffmpeg ${dump}`);
-
 
   return new Promise((resolve, reject) => {
     command.on("end", resolve);
@@ -131,21 +129,19 @@ const arrayFromAsync = async <T>(iter: Promise<T>[]): Promise<T[]> => {
   return result;
 };
 
-
-const bypassFFmpeg = (command: ffmpeg.FfmpegCommand) =>{
-  const bk = command.availableFormats
+const bypassFFmpeg = (command: ffmpeg.FfmpegCommand) => {
+  const bk = command.availableFormats;
   command.availableFormats = (cb: (err: any, data: any) => void) => {
     bk.bind(command)((err, data) => {
       const lavfi = {
         canDemux: true,
         canMux: true,
-        description: 'Lavfi',
-      }
-      cb(err, {...data, lavfi})
-    })
-  }
-}
-
+        description: "Lavfi",
+      };
+      cb(err, { ...data, lavfi });
+    });
+  };
+};
 
 export const checkEncoder = async () => {
   return Object.fromEntries(
