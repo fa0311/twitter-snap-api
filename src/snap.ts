@@ -1,6 +1,6 @@
+import { default as ffmpeg } from "fluent-ffmpeg";
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
-import { default as ffmpeg } from "fluent-ffmpeg";
 import { getSnapAppRenderWithCache } from "twitter-snap";
 
 type TwitterSnapConfig = {
@@ -65,6 +65,12 @@ export const createTwitterSnapClient = async (config: createTwitterSnapClientPar
 };
 
 const codes = {
+  software: [
+    ["libx264", "mp4"] as const,
+    ["libx265", "mp4"] as const,
+    ["libvpx-vp9", "webm"] as const,
+    ["libaom-av1", "webm"] as const,
+  ],
   nvenc: [
     ["h264_nvenc", "mp4"] as const,
     ["hevc_nvenc", "mp4"] as const,
@@ -90,15 +96,25 @@ const codes = {
   ],
 };
 
+
 const encoderCheck = (codec: string, format: string) => {
   const command = ffmpeg({
     timeout: 0,
   });
-  command.input("testsrc=duration=1:size=427x240:rate=5");
+  bypassFFmpeg(command);
+  command.input("testsrc=duration=1:size=640x360:rate=5");
   command.inputFormat("lavfi");
+  command.outputOptions(["-vf", "format=nv12"]);
   command.outputOptions(["-c:v", codec]);
   command.outputFormat(format);
   command.output("/dev/null");
+
+  const dump = command
+      ._getArguments()
+      .map((e) => `"${e}"`)
+      .join(' ');
+  console.debug(`ffmpeg ${dump}`);
+
 
   return new Promise((resolve, reject) => {
     command.on("end", resolve);
@@ -115,6 +131,22 @@ const arrayFromAsync = async <T>(iter: Promise<T>[]): Promise<T[]> => {
   return result;
 };
 
+
+const bypassFFmpeg = (command: ffmpeg.FfmpegCommand) =>{
+  const bk = command.availableFormats
+  command.availableFormats = (cb: (err: any, data: any) => void) => {
+    bk.bind(command)((err, data) => {
+      const lavfi = {
+        canDemux: true,
+        canMux: true,
+        description: 'Lavfi',
+      }
+      cb(err, {...data, lavfi})
+    })
+  }
+}
+
+
 export const checkEncoder = async () => {
   return Object.fromEntries(
     await arrayFromAsync(
@@ -124,7 +156,7 @@ export const checkEncoder = async () => {
             try {
               await encoderCheck(codec, format);
               return { codec, format, available: true };
-            } catch {
+            } catch (e) {
               return { codec, format, available: false };
             }
           }),
