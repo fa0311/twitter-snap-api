@@ -1,0 +1,37 @@
+FROM node:22 AS node-build
+WORKDIR /app
+
+RUN npm i -g pnpm
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm i --frozen-lockfile
+COPY . .
+RUN pnpm build
+
+FROM nvidia/cuda:12.4.1-runtime-ubuntu22.04 AS runtime
+WORKDIR /app
+
+RUN apt-get update
+
+RUN apt-get install -y --no-install-recommends ca-certificates curl gnupg && \
+    mkdir -p /etc/apt/keyrings && \
+    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
+    | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x nodistro main" \
+    > /etc/apt/sources.list.d/nodesource.list && \
+    apt-get update && apt-get install -y --no-install-recommends nodejs
+
+RUN rm -rf /var/lib/apt/lists/*
+
+
+COPY .temp/ffmpeg /opt/ffmpeg
+ENV PATH="/opt/ffmpeg/bin:${PATH}"
+ENV LD_LIBRARY_PATH="/opt/ffmpeg/lib:${LD_LIBRARY_PATH}"
+
+RUN npm i -g pnpm
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm i --frozen-lockfile --prod
+COPY --from=node-build /app/dist ./dist
+
+EXPOSE 3000
+ENTRYPOINT ["pnpm","start"]
