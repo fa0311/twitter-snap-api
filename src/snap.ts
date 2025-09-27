@@ -152,7 +152,7 @@ export const checkEncoder = async () => {
             try {
               await encoderCheck(codec, format);
               return { codec, format, available: true };
-            } catch (e) {
+            } catch {
               return { codec, format, available: false };
             }
           }),
