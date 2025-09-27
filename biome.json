@@ -3,19 +3,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
-      "correctness": {
-        "noUnusedVariables": "error",
-        "noUnusedImports": "error"
-      },
-      "style": {
-        "useConst": "error",
-        "useTemplate": "error",
-        "noNonNullAssertion": "warn"
-      },
-      "suspicious": {
-        "noExplicitAny": "off"
-      }
+      "recommended": true
     }
   },
   "formatter": {
@@ -26,14 +14,6 @@
     "lineWidth": 100,
     "lineEnding": "lf"
   },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double",
-      "trailingCommas": "all",
-      "semicolons": "always",
-      "arrowParentheses": "always"
-    }
-  },
   "json": {
     "formatter": {
       "enabled": true,
@@ -43,6 +23,19 @@
     }
   },
   "files": {
-    "includes": ["src/**/*", "*.json", "*.ts", "*.js"]
-  }
+    "includes": ["**/*.ts"]
+  },
+  "overrides": [
+    {
+      "includes": ["test/**/*"],
+      "linter": {
+        "rules": {
+          "recommended": true,
+          "style": {
+            "noNonNullAssertion": "off"
+          }
+        }
+      }
+    }
+  ]
 }

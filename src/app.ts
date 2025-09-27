@@ -3,7 +3,6 @@ import fs from "node:fs/promises";
 import { swaggerUI } from "@hono/swagger-ui";
 import { z } from "@hono/zod-openapi";
 import { zValidator } from "@hono/zod-validator";
-import { Semaphore } from "async-mutex";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
@@ -11,17 +10,34 @@ import { prettyJSON } from "hono/pretty-json";
 import { secureHeaders } from "hono/secure-headers";
 import { describeRoute, openAPIRouteHandler } from "hono-openapi";
 import { env } from "./env.js";
+import { createMutex } from "./mutex.js";
 import { checkEncoder, createTwitterSnapClient } from "./snap.js";
 
 const getSchema = z.object({
   url: z.string(),
 });
 
+const snapResponse = async (dir: string, path: string) => {
+  const stat = await fs.stat(path);
+  const type = path.endsWith(".png") ? "image/png" : "video/mp4";
+  const stream = createReadStream(path);
+  stream.on("close", async () => {
+    await fs.rm(dir, { recursive: true });
+  });
+  return new Response(stream, {
+    headers: {
+      "Content-Type": type,
+      "Content-Length": stat.size.toString(),
+    },
+  });
+};
+
 export const createApp = async () => {
   const app = new Hono();
-  const mutex = new Semaphore(env.SEMAPHORE);
+  const mutex = createMutex(1);
   const snap = await createTwitterSnapClient({
     cookiesFile: env.COOKIE_FILE,
+    ffmpegAdditonalOption: env.FFMPEG_OPTION,
   });
 
   app.use("*", logger());
@@ -53,29 +69,28 @@ export const createApp = async () => {
     zValidator("query", getSchema),
     async (c) => {
       const { url } = c.req.valid("query");
-      const [dir, path] = await new Promise<[string, string]>((resolve) => {
-        mutex
-          .runExclusive(async () => {
-            const result = await snap.url(url);
-            resolve(result);
-          })
-          .catch((err) => resolve(err));
+      const [dir, path] = await mutex.runExclusive(async () => {
+        return await snap.url(url);
       });
-
-      const stat = await fs.stat(path);
-      const type = path.endsWith(".png") ? "image/png" : "video/mp4";
-      const stream = createReadStream(path);
-      stream.on("close", async () => {
-        await fs.rm(dir, { recursive: true });
-      });
-      return new Response(stream, {
-        headers: {
-          "Content-Type": type,
-          "Content-Length": stat.size.toString(),
-        },
-      });
+      return snapResponse(dir, path);
     },
   );
+
+  app.get("/twitter/:id", async (c) => {
+    const { id } = c.req.param();
+    const [dir, path] = await mutex.runExclusive(async () => {
+      return await snap.twitter(id);
+    });
+    return snapResponse(dir, path);
+  });
+
+  app.get("/pixiv/:id", async (c) => {
+    const { id } = c.req.param();
+    const [dir, path] = await mutex.runExclusive(async () => {
+      return await snap.pixiv(id);
+    });
+    return snapResponse(dir, path);
+  });
 
   app.get("/encoder", async (c) => {
     const encoder = await checkEncoder();

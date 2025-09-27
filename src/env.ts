@@ -4,6 +4,10 @@ const envSchema = z.object({
   PORT: z.coerce.number().default(3000),
   COOKIE_FILE: z.string().default("./cookies.json"),
   SEMAPHORE: z.coerce.number().default(1),
+  FFMPEG_OPTION: z
+    .string()
+    .transform((val) => z.array(z.string()).parse(JSON.parse(val)))
+    .optional(),
 });
 
 const parseEnv = () => {

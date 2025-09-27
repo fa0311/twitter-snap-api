@@ -131,7 +131,7 @@ const arrayFromAsync = async <T>(iter: Promise<T>[]): Promise<T[]> => {
 
 const bypassFFmpeg = (command: ffmpeg.FfmpegCommand) => {
   const bk = command.availableFormats;
-  command.availableFormats = (cb: (err: any, data: any) => void) => {
+  command.availableFormats = (cb: (err: Error, data: ffmpeg.Formats) => void) => {
     bk.bind(command)((err, data) => {
       const lavfi = {
         canDemux: true,
