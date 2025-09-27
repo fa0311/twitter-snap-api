@@ -1,0 +1,50 @@
+services:
+  twitter-snap-api-basic:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: twitter-snap-api-soft
+    ports:
+      - "3333:3000"
+
+  twitter-snap-api-nvenc:
+    build:
+      context: .
+      dockerfile: Dockerfile.nvenc
+    container_name: twitter-snap-api-nvenc
+    ports:
+      - "3334:3000"
+    gpus: all
+    environment:
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,video,utility
+
+  twitter-snap-api-qsv:
+    build:
+      context: .
+      dockerfile: Dockerfile.qsv
+    container_name: twitter-snap-api-qsv
+    ports:
+      - "3335:3000"
+    devices:
+      - /dev/dri:/dev/dri
+    environment:
+      LIBVA_DRIVER_NAME: iHD
+      LIBVA_DRIVERS_PATH: /usr/lib/x86_64-linux-gnu/dri
+
+
+  twitter-snap-api-full:
+    build:
+      context: .
+      dockerfile: Dockerfile.full
+    container_name: twitter-snap-api-full
+    ports:
+      - "3336:3000"
+    gpus: all
+    devices:
+      - /dev/dri:/dev/dri
+    environment:
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,video,utility
+      LIBVA_DRIVER_NAME: iHD
+      LIBVA_DRIVERS_PATH: /usr/lib/x86_64-linux-gnu/dri
