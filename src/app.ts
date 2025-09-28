@@ -17,7 +17,7 @@ const getSchema = z.object({
   url: z.string(),
 });
 
-const snapResponse = async (dir: string, path: string) => {
+const snapResponse = async (_: string, path: string) => {
   const stat = await fs.stat(path);
   const type = path.endsWith(".png") ? "image/png" : "video/mp4";
   const stream = createReadStream(path);
