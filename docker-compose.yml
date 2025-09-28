@@ -14,7 +14,13 @@ services:
     container_name: twitter-snap-api-nvenc
     ports:
       - "3334:3000"
-    gpus: all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
     environment:
       NVIDIA_VISIBLE_DEVICES: all
       NVIDIA_DRIVER_CAPABILITIES: compute,video,utility
@@ -40,7 +46,13 @@ services:
     container_name: twitter-snap-api-full
     ports:
       - "3336:3000"
-    gpus: all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
     devices:
       - /dev/dri:/dev/dri
     environment:
