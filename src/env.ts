@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const envSchema = z.object({
   PORT: z.coerce.number().default(3000),
-  COOKIE_FILE: z.string().default("./cookies.json"),
+  COOKIE_FILE: z.string().default("./cookie.json"),
   SEMAPHORE: z.coerce.number().default(1),
   FFMPEG_OPTION: z
     .string()
