@@ -17,17 +17,26 @@ const getSchema = z.object({
   url: z.string(),
 });
 
-const snapResponse = async (_: string, path: string) => {
+const snapResponse = async (dir: string, path: string) => {
   const stat = await fs.stat(path);
-  const type = path.endsWith(".png") ? "image/png" : "video/mp4";
+  const type = (() => {
+    if (path.endsWith(".png")) {
+      return "image/png";
+    } else if (path.endsWith(".mp4")) {
+      return "video/mp4";
+    }
+    throw new Error("Unknown file type");
+  })();
   const stream = createReadStream(path);
-  const res = new Response(stream, {
+  stream.on("end", async () => {
+    await fs.rm(dir, { recursive: true });
+  });
+  return new Response(stream, {
     headers: {
       "Content-Type": type,
       "Content-Length": stat.size.toString(),
     },
   });
-  return res;
 };
 
 export const createApp = async () => {
