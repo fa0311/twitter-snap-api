@@ -1,4 +1,4 @@
 .temp
 node_modules
-cookies.json
+cookie.json
 .env
