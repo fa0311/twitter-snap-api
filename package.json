@@ -31,7 +31,7 @@
     "fluent-ffmpeg": "^2.1.3",
     "hono": "^4.9.8",
     "hono-openapi": "^1.0.8",
-    "twitter-snap": "^0.0.79",
+    "twitter-snap": "^0.0.80",
     "zod": "^4.1.11"
   },
   "devDependencies": {

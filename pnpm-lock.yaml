@@ -42,8 +42,8 @@ importers:
         specifier: ^1.0.8
         version: 1.0.8(@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.9.8))(@standard-community/standard-json@0.3.3(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.11))(@standard-community/standard-openapi@0.2.4(@standard-community/standard-json@0.3.3(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.11))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod@4.1.11))(@types/json-schema@7.0.15)(hono@4.9.8)(openapi-types@12.1.3)
       twitter-snap:
-        specifier: ^0.0.79
-        version: 0.0.79(typescript@5.9.2)
+        specifier: ^0.0.80
+        version: 0.0.80(typescript@5.9.2)
       zod:
         specifier: ^4.1.11
         version: 4.1.11
@@ -1754,8 +1754,8 @@ packages:
   twitter-openapi-typescript@0.0.55:
     resolution: {integrity: sha512-VuvrUMHtMOWumTRxRxtr+MmTHExvtycKoR3cL9sY8L0ZQ5LhqlZVWnUyHW3hCwaSlfeiqQJPA8rWnW3GDUZHgg==}
 
-  twitter-snap@0.0.79:
-    resolution: {integrity: sha512-xQ9MmxJMLHP0iiQz+IipBlIvXA1pNThlbu/WkXxsT5zD9FHGuVZH6zS0c+0Wb4rGZ0oLtqKPSli+m7DlhPsNQg==}
+  twitter-snap@0.0.80:
+    resolution: {integrity: sha512-MZCrIJrefPI75n+JSSvziOuAMVxcRMCqnekIQ+P9zsZRYSljdC5wppS8clrhLaA2jPF/t8/SCXtwGrhUKUYNEg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -3512,7 +3512,7 @@ snapshots:
       twitter-openapi-typescript-generated: 0.0.38
       x-client-transaction-id-generater: 0.0.7
 
-  twitter-snap@0.0.79(typescript@5.9.2):
+  twitter-snap@0.0.80(typescript@5.9.2):
     dependencies:
       '@clack/prompts': 0.10.1
       '@oclif/core': 4.5.4
