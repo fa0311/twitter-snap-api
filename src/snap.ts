@@ -22,6 +22,15 @@ type createTwitterSnapClientParams = TwitterSnapConfig & {
   outputDir?: string;
 };
 
+export type EncoderCheckTarget = {
+  codec: string;
+  format: string;
+};
+
+export type EncoderCheckResult = EncoderCheckTarget & {
+  available: boolean;
+};
+
 export const createTwitterSnapClient = async (config: createTwitterSnapClientParams) => {
   const outputDir = config.outputDir ?? ".temp";
   const api = getSnapAppRenderWithCache({});
@@ -96,13 +105,14 @@ const codes = {
   ],
 };
 
-const encoderCheck = (codec: string, format: string) => {
+const encoderCheck = (codec: string, format: string): Promise<void> => {
   const command = ffmpeg({
     timeout: 0,
   });
   bypassFFmpeg(command);
-  command.input("testsrc=duration=1:size=640x360:rate=5");
+  command.input("color=c=black:size=64x64:rate=1:duration=0.1");
   command.inputFormat("lavfi");
+  command.outputOptions(["-frames:v", "1"]);
   command.outputOptions(["-vf", "format=nv12"]);
   command.outputOptions(["-c:v", codec]);
   command.outputFormat(format);
@@ -115,8 +125,8 @@ const encoderCheck = (codec: string, format: string) => {
   console.debug(`ffmpeg ${dump}`);
 
   return new Promise((resolve, reject) => {
-    command.on("end", resolve);
-    command.on("error", reject);
+    command.on("end", () => resolve());
+    command.on("error", () => reject());
     command.run();
   });
 };
@@ -143,20 +153,26 @@ const bypassFFmpeg = (command: ffmpeg.FfmpegCommand) => {
   };
 };
 
+export const checkEncoders = async (
+  targets: readonly EncoderCheckTarget[],
+): Promise<EncoderCheckResult[]> => {
+  return await arrayFromAsync(
+    targets.map(async ({ codec, format }) => {
+      try {
+        await encoderCheck(codec, format);
+        return { codec, format, available: true };
+      } catch {
+        return { codec, format, available: false };
+      }
+    }),
+  );
+};
+
 export const checkEncoder = async () => {
   return Object.fromEntries(
     await arrayFromAsync(
       Object.entries(codes).map(async ([name, data]) => {
-        const body = await arrayFromAsync(
-          data.map(async ([codec, format]) => {
-            try {
-              await encoderCheck(codec, format);
-              return { codec, format, available: true };
-            } catch {
-              return { codec, format, available: false };
-            }
-          }),
-        );
+        const body = await checkEncoders(data.map(([codec, format]) => ({ codec, format })));
         return [name, body];
       }),
     ),
