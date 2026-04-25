@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 TEMP_DIR="${SCRIPT_DIR}/.temp"
 TARGET_DIR="${TEMP_DIR}/ffmpeg"
 
-URL="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n8.0-latest-linux64-gpl-shared-8.0.tar.xz"
+URL="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl-shared.tar.xz"
 
 mkdir -p "${TEMP_DIR}" "${TARGET_DIR}"
 curl -fL --progress-bar -o "${TEMP_DIR}/ffmpeg.tar.xz" "$URL"
