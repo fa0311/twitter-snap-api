@@ -21,5 +21,7 @@ RUN pnpm i --frozen-lockfile --prod
 
 COPY --from=node-build /app/dist ./dist
 
+HEALTHCHECK --interval=15m --timeout=60s --start-period=30s --retries=1 \
+    CMD curl -S --fail "http://127.0.0.1:3000/health/encoder?codec=libx264&format=mp4"
 EXPOSE 3000
 ENTRYPOINT ["pnpm","start"]

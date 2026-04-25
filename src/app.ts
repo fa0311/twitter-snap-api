@@ -17,7 +17,7 @@ const getSchema = z.object({
   url: z.string(),
 });
 
-const encoderQueryValueSchema = z.union([z.string().min(1), z.array(z.string().min(1)).min(1)]);
+const encoderQueryValueSchema = z.union([z.string(), z.array(z.string())]);
 
 const queryValueToArray = (value: string | string[]) => {
   return Array.isArray(value) ? value : [value];
