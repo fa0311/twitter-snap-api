@@ -110,7 +110,7 @@ const encoderCheck = (codec: string, format: string): Promise<void> => {
     timeout: 0,
   });
   bypassFFmpeg(command);
-  command.input("color=c=black:size=64x64:rate=1:duration=0.1");
+  command.input("testsrc=duration=1:size=640x360:rate=5");
   command.inputFormat("lavfi");
   command.outputOptions(["-frames:v", "1"]);
   command.outputOptions(["-vf", "format=nv12"]);
