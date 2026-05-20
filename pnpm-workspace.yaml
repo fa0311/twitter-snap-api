@@ -3,3 +3,8 @@ allowBuilds:
   puppeteer: true
   es5-ext: false
   yarn: false
+
+minimumReleaseAgeExclude:
+  - twitter-snap
+  - twitter-openapi-typescript
+  - twitter-openapi-typescript-generated
