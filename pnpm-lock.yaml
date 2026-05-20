@@ -42,8 +42,8 @@ importers:
         specifier: ^1.0.8
         version: 1.0.8(@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.9.8))(@standard-community/standard-json@0.3.3(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.11))(@standard-community/standard-openapi@0.2.4(@standard-community/standard-json@0.3.3(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.11))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod@4.1.11))(@types/json-schema@7.0.15)(hono@4.9.8)(openapi-types@12.1.3)
       twitter-snap:
-        specifier: ^0.0.80
-        version: 0.0.80(typescript@5.9.2)
+        specifier: ^0.0.81
+        version: 0.0.81(typescript@5.9.2)
       zod:
         specifier: ^4.1.11
         version: 4.1.11
@@ -110,24 +110,28 @@ packages:
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@biomejs/cli-linux-arm64@2.2.4':
     resolution: {integrity: sha512-M/Iz48p4NAzMXOuH+tsn5BvG/Jb07KOMTdSVwJpicmhN309BeEyRyQX+n1XDF0JVSlu28+hiTQ2L4rZPvu7nMw==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@biomejs/cli-linux-x64-musl@2.2.4':
     resolution: {integrity: sha512-m41nFDS0ksXK2gwXL6W6yZTYPMH0LughqbsxInSKetoH6morVj43szqKx79Iudkp8WRT5SxSh7qVb8KCUiewGg==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@biomejs/cli-linux-x64@2.2.4':
     resolution: {integrity: sha512-orr3nnf2Dpb2ssl6aihQtvcKtLySLta4E2UcXdp7+RTa7mfJjBgIsbS0B9GC8gVu0hjOu021aU8b3/I1tn+pVQ==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@biomejs/cli-win32-arm64@2.2.4':
     resolution: {integrity: sha512-NXnfTeKHDFUWfxAefa57DiGmu9VyKi0cDqFpdI+1hJWQjGJhJutHPX0b5m+eXvTKOaf+brU+P0JrQAZMb5yYaQ==}
@@ -417,56 +421,67 @@ packages:
     resolution: {integrity: sha512-kDWSPafToDd8LcBYd1t5jw7bD5Ojcu12S3uT372e5HKPzQt532vW+rGFFOaiR0opxePyUkHrwz8iWYEyH1IIQA==}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.52.2':
     resolution: {integrity: sha512-gKm7Mk9wCv6/rkzwCiUC4KnevYhlf8ztBrDRT9g/u//1fZLapSRc+eDZj2Eu2wpJ+0RzUKgtNijnVIB4ZxyL+w==}
     cpu: [arm]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.52.2':
     resolution: {integrity: sha512-66lA8vnj5mB/rtDNwPgrrKUOtCLVQypkyDa2gMfOefXK6rcZAxKLO9Fy3GkW8VkPnENv9hBkNOFfGLf6rNKGUg==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.52.2':
     resolution: {integrity: sha512-s+OPucLNdJHvuZHuIz2WwncJ+SfWHFEmlC5nKMUgAelUeBUnlB4wt7rXWiyG4Zn07uY2Dd+SGyVa9oyLkVGOjA==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-loong64-gnu@4.52.2':
     resolution: {integrity: sha512-8wTRM3+gVMDLLDdaT6tKmOE3lJyRy9NpJUS/ZRWmLCmOPIJhVyXwjBo+XbrrwtV33Em1/eCTd5TuGJm4+DmYjw==}
     cpu: [loong64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-ppc64-gnu@4.52.2':
     resolution: {integrity: sha512-6yqEfgJ1anIeuP2P/zhtfBlDpXUb80t8DpbYwXQ3bQd95JMvUaqiX+fKqYqUwZXqdJDd8xdilNtsHM2N0cFm6A==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.52.2':
     resolution: {integrity: sha512-sshYUiYVSEI2B6dp4jMncwxbrUqRdNApF2c3bhtLAU0qA8Lrri0p0NauOsTWh3yCCCDyBOjESHMExonp7Nzc0w==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-musl@4.52.2':
     resolution: {integrity: sha512-duBLgd+3pqC4MMwBrKkFxaZerUxZcYApQVC5SdbF5/e/589GwVvlRUnyqMFbM8iUSb1BaoX/3fRL7hB9m2Pj8Q==}
     cpu: [riscv64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-s390x-gnu@4.52.2':
     resolution: {integrity: sha512-tzhYJJidDUVGMgVyE+PmxENPHlvvqm1KILjjZhB8/xHYqAGeizh3GBGf9u6WdJpZrz1aCpIIHG0LgJgH9rVjHQ==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.52.2':
     resolution: {integrity: sha512-opH8GSUuVcCSSyHHcl5hELrmnk4waZoVpgn/4FDao9iyE4WpQhyWJ5ryl5M3ocp4qkRuHfyXnGqg8M9oKCEKRA==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.52.2':
     resolution: {integrity: sha512-LSeBHnGli1pPKVJ79ZVJgeZWWZXkEe/5o8kcn23M8eMKCUANejchJbF/JqzM4RRjOJfNRhKJk8FuqL1GKjF5oQ==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-openharmony-arm64@4.52.2':
     resolution: {integrity: sha512-uPj7MQ6/s+/GOpolavm6BPo+6CbhbKYyZHUDvZ/SmJM7pfDBgdGisFX3bY/CBDMg2ZO4utfhlApkSfZ92yXw7Q==}
@@ -722,6 +737,7 @@ packages:
   basic-ftp@5.0.5:
     resolution: {integrity: sha512-4Bcg1P8xhUuqcii/S0Z9wiHIrQVPMermM1any+MX5GeGD7faD3/msQUDGLol9wOcz4/jbg/WJnGqoJF6LiBdtg==}
     engines: {node: '>=10.0.0'}
+    deprecated: Security vulnerability fixed in 5.2.1, please upgrade
 
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
@@ -1748,14 +1764,14 @@ packages:
   tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
 
-  twitter-openapi-typescript-generated@0.0.38:
-    resolution: {integrity: sha512-7BvPYNeq7W1eAk6H1ZcQLZ8oyA9ma2OGT279+8BbeuNqFpITMK/odqhJbBsQ7dG/dgCcCTkRv49gShtUHCSxng==}
+  twitter-openapi-typescript-generated@0.0.40:
+    resolution: {integrity: sha512-l8LUyuWRD/32BIwCNFdzFdyCxYnFAcS5qMS1NY7TFvpRjGiw6D/I107hpbfxrH/S/jZMVDSQbQY8TcUjk2b/EQ==}
 
-  twitter-openapi-typescript@0.0.55:
-    resolution: {integrity: sha512-VuvrUMHtMOWumTRxRxtr+MmTHExvtycKoR3cL9sY8L0ZQ5LhqlZVWnUyHW3hCwaSlfeiqQJPA8rWnW3GDUZHgg==}
+  twitter-openapi-typescript@0.0.56:
+    resolution: {integrity: sha512-uvl+cP2bje9WJoVOTmKo0ij0JZjuR49p1iFA3zsZPabfLuRpCdHBqdtgicKFYNkZQjYXLrCBoAWwipLk6FBx1A==}
 
-  twitter-snap@0.0.80:
-    resolution: {integrity: sha512-MZCrIJrefPI75n+JSSvziOuAMVxcRMCqnekIQ+P9zsZRYSljdC5wppS8clrhLaA2jPF/t8/SCXtwGrhUKUYNEg==}
+  twitter-snap@0.0.81:
+    resolution: {integrity: sha512-Ek4hABLvJ0hkBoW3sfax0hRTYCiJjRzFtRh++s4JccUw5bloaNo1q3H57JcKcsP2rYO/je3oh4W6WTuZ7qEP2A==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -3505,14 +3521,14 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  twitter-openapi-typescript-generated@0.0.38: {}
+  twitter-openapi-typescript-generated@0.0.40: {}
 
-  twitter-openapi-typescript@0.0.55:
+  twitter-openapi-typescript@0.0.56:
     dependencies:
-      twitter-openapi-typescript-generated: 0.0.38
+      twitter-openapi-typescript-generated: 0.0.40
       x-client-transaction-id-generater: 0.0.7
 
-  twitter-snap@0.0.80(typescript@5.9.2):
+  twitter-snap@0.0.81(typescript@5.9.2):
     dependencies:
       '@clack/prompts': 0.10.1
       '@oclif/core': 4.5.4
@@ -3529,8 +3545,8 @@ snapshots:
       ora: 8.2.0
       puppeteer: 24.22.2(typescript@5.9.2)
       react: 19.1.1
-      twitter-openapi-typescript: 0.0.55
-      twitter-openapi-typescript-generated: 0.0.38
+      twitter-openapi-typescript: 0.0.56
+      twitter-openapi-typescript-generated: 0.0.40
     transitivePeerDependencies:
       - bare-buffer
       - bufferutil
