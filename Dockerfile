@@ -1,20 +1,20 @@
-FROM node:22 AS node-build
+FROM node:24 AS node-build
 WORKDIR /app
 
-RUN npm i -g pnpm
+RUN corepack enable
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN pnpm i --frozen-lockfile
 COPY . .
 RUN pnpm build
 
-FROM node:22 AS runtime
+FROM node:24 AS runtime
 WORKDIR /app
 
 COPY .temp/ffmpeg /opt/ffmpeg
 ENV PATH="/opt/ffmpeg/bin:${PATH}"
 ENV LD_LIBRARY_PATH="/opt/ffmpeg/lib:${LD_LIBRARY_PATH}"
 
-RUN npm i -g pnpm
+RUN corepack enable
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN pnpm i --frozen-lockfile --prod
