@@ -200,8 +200,8 @@ importers:
         specifier: ^1.3.5
         version: 1.3.5(hono@4.13.13)(zod@4.6.7)
       twitter-snap:
-        specifier: ^0.1.0
-        version: 0.1.0(supports-color@8.1.1)(yauzl@2.10.0)
+        specifier: ^0.1.1
+        version: 0.1.1(supports-color@8.1.1)(yauzl@2.10.0)
       zod:
         specifier: ^4.6.7
         version: 4.6.7
@@ -2018,14 +2018,14 @@ packages:
   tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
 
-  twitter-openapi-typescript-generated@0.1.0:
-    resolution: {integrity: sha512-KJEO2W66beQKDa9T0LUo8qto4+xXWzy+77wsU1pUpGtSH8LUT/sKOpif2kEDFhyIycthZMcR2FXjhKufOkbBYQ==}
+  twitter-openapi-typescript-generated@0.1.1:
+    resolution: {integrity: sha512-zse0zAs854eWsSHrNxCvkTx73uvlehKrM2igPPv0V2xOfGhR3bmzDhchw3WZ7B4DuNIMN8ZwQ+lZx/KkBkDnrw==}
 
-  twitter-openapi-typescript@0.1.0:
-    resolution: {integrity: sha512-qZRLeMjZodCaxgpIUagHjvWA6RQwjEcuIi2u8mMTld6S2LbYxQItW3uiewEue6ZOlB/nRLEhZYkMLn3K9dwVhg==}
+  twitter-openapi-typescript@0.1.1:
+    resolution: {integrity: sha512-rts9RzUgLYqW4MxGAT6onQfQUJJU01qB4I1LfxvbUSk/+BZHjB7Qmp6L21D6E2Zubv3ZnpnKq05ThzgeQDUTQg==}
 
-  twitter-snap@0.1.0:
-    resolution: {integrity: sha512-NA2Vs7H2aSF0Z83Rd2Vaq8c5MMk9PZQKEb1P7qbmXY9UfDs2Ttese6bV5rrYneg950rjRsoBOQdoNs3vBcKOuQ==}
+  twitter-snap@0.1.1:
+    resolution: {integrity: sha512-HLTeKDHlQnxwDpaaMbwvLipr0yrEQDVLlXNGNNhqjwi/5XiBMDR6kUfG8p4O8JVa9EeJdScvuTp5j0AKBFT+lA==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -3706,14 +3706,14 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  twitter-openapi-typescript-generated@0.1.0: {}
+  twitter-openapi-typescript-generated@0.1.1: {}
 
-  twitter-openapi-typescript@0.1.0:
+  twitter-openapi-typescript@0.1.1:
     dependencies:
-      twitter-openapi-typescript-generated: 0.1.0
+      twitter-openapi-typescript-generated: 0.1.1
       x-client-transaction-id-generater: 0.0.7
 
-  twitter-snap@0.1.0(supports-color@8.1.1)(yauzl@2.10.0):
+  twitter-snap@0.1.1(supports-color@8.1.1)(yauzl@2.10.0):
     dependencies:
       '@clack/prompts': 1.8.1
       '@oclif/core': 5.1.8
@@ -3730,8 +3730,8 @@ snapshots:
       ora: 9.4.1
       puppeteer: 25.14.0(yauzl@2.10.0)
       react: 19.3.1
-      twitter-openapi-typescript: 0.1.0
-      twitter-openapi-typescript-generated: 0.1.0
+      twitter-openapi-typescript: 0.1.1
+      twitter-openapi-typescript-generated: 0.1.1
     transitivePeerDependencies:
       - bufferutil
       - proxy-agent
