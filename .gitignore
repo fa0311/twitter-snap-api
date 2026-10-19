@@ -2,3 +2,4 @@
 node_modules
 cookie.json
 .env
+dist
