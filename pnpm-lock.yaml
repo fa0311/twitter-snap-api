@@ -200,8 +200,8 @@ importers:
         specifier: ^1.3.5
         version: 1.3.5(hono@4.13.13)(zod@4.6.7)
       twitter-snap:
-        specifier: ^0.1.1
-        version: 0.1.1(supports-color@8.1.1)(yauzl@2.10.0)
+        specifier: ^0.2.1
+        version: 0.2.1(supports-color@8.1.1)(yauzl@2.10.0)
       zod:
         specifier: ^4.6.7
         version: 4.6.7
@@ -659,12 +659,16 @@ packages:
     resolution: {integrity: sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==}
     engines: {node: ^14.21.3 || >=16}
 
+  '@oclif/core@5.1.10':
+    resolution: {integrity: sha512-iO+Ga2ve3x0QDeqKVvVEYbb+YPVV7A0rbliCO+ZcUdZ/5Sfv+kHz2G247ExAw5aSAEXn9gX6H4jjON2mcJivqw==}
+    engines: {node: '>=22.0.0'}
+
   '@oclif/core@5.1.8':
     resolution: {integrity: sha512-K1b3zdmbwANV9Jk+QN8aFvnXY/IhfWRnmhWn/V57h7alzbtck2je2DVVf0EkA01FokreF7Tpe+7hiGS87q30SA==}
     engines: {node: '>=22.0.0'}
 
-  '@oclif/plugin-help@7.0.4':
-    resolution: {integrity: sha512-i3AKiJrHF8y/Hj/1QfNBVaE4N9sOlodA/CFq8Lv998BZAHe/uBwgqL94FvaZenj/3REyl01stptAUp/AQjpfOw==}
+  '@oclif/plugin-help@7.0.6':
+    resolution: {integrity: sha512-0p9fM8OtQAZi68arvkfvUzbgiVpXGu6fIgkcvTc2wbuIHfDCs6benPU2uxXxfU2yJ0BWJw6cJbCZQN9cK4H6HA==}
     engines: {node: '>=22.0.0'}
 
   '@oclif/plugin-plugins@7.0.8':
@@ -696,8 +700,8 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
-  '@puppeteer/browsers@3.2.5':
-    resolution: {integrity: sha512-UoCo3Pynbm37aLEEoydSiG+t24ui7sLD40+07CKxzxNy4PpSowJMkvlLIiV67XjP1lMVynhQVnuwlTABqBH8LQ==}
+  '@puppeteer/browsers@3.2.6':
+    resolution: {integrity: sha512-MJP29gVoHznmqmwhH1tlZqzfeQ3aylTpSSa6WKZXtkwYUH02i9imBmWGTyZrbnAou5paX78SE4jMAUqnEPf8ug==}
     engines: {node: '>=22.12.0'}
     hasBin: true
     peerDependencies:
@@ -1242,8 +1246,8 @@ packages:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
 
-  devtools-protocol@0.0.1696802:
-    resolution: {integrity: sha512-FO5/SENfvc2K8wRnWQflKcwuoTH4dBkXCWTQ9ebIWtuX8JM5+ZvCotaEmkfh21pO7TvIKGTM3hG4xFiq9WTwmg==}
+  devtools-protocol@0.0.1704951:
+    resolution: {integrity: sha512-GQhQOs9u/Mvm1zMtJIH872JS4AskuZdUSsPNPk4ChahtWAUqgz6atEtIsMt+nO7MqF1Ic4HxII/k8Cu36JivNg==}
 
   dezalgo@1.0.4:
     resolution: {integrity: sha512-rXSP0bf+5n0Qonsb+SVVfNfIsimO4HEtmnIpPHY8Q1UCzKlQrDMfdobr8nJOOsRgWCyMRqeSBQzmWUMq7zvVig==}
@@ -1840,6 +1844,10 @@ packages:
     resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
     engines: {node: '>=12'}
 
+  pngjs@7.0.0:
+    resolution: {integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==}
+    engines: {node: '>=14.19.0'}
+
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
@@ -1858,12 +1866,12 @@ packages:
   proto-list@1.2.4:
     resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}
 
-  puppeteer-core@25.14.0:
-    resolution: {integrity: sha512-LQitnes3tBeVbdZ7V/4iwJPLZGgkl9uBVK0W7YYMh68j/3Y9eNuvj4yl+Fdo7zN0SuajOMrhd7aPj3DifK8k6A==}
+  puppeteer-core@25.16.0:
+    resolution: {integrity: sha512-VA5Pf54N8shfopNkZZXCdiiwfnnY8ZJYAMqFQRhlH5mGUhfwf53Ar770GPtdpTDLUqvQeYpIBtC9/G2Jij2IJw==}
     engines: {node: '>=22.12.0'}
 
-  puppeteer@25.14.0:
-    resolution: {integrity: sha512-+s1Iqbl9DsGLOaQdgCQyhtgHZsF9hi4Iu8iuBqxzraxUXoRG1QkYQI0CA1/VsNK1gZWJfs50BL/oOb1L+Yz8Yg==}
+  puppeteer@25.16.0:
+    resolution: {integrity: sha512-LOr3reYnxAYYfQkpopz1fQnL0LdvqhpR5U2Fu+QnwzTX2gpVTHsn91UETo5NNC1md2/oC54Zu1ChBXgZDNSP1A==}
     engines: {node: '>=22.12.0'}
     hasBin: true
 
@@ -2018,14 +2026,14 @@ packages:
   tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
 
-  twitter-openapi-typescript-generated@0.1.1:
-    resolution: {integrity: sha512-zse0zAs854eWsSHrNxCvkTx73uvlehKrM2igPPv0V2xOfGhR3bmzDhchw3WZ7B4DuNIMN8ZwQ+lZx/KkBkDnrw==}
+  twitter-openapi-typescript-generated@0.1.4:
+    resolution: {integrity: sha512-9AESaCfQhhcA1VAjVANLvWPODzAmjGwwHx0vQv8WZYFbJCHcj/V6Kw2xT0iznUfDSq40Egc481lQ4GUCcVNqUg==}
 
-  twitter-openapi-typescript@0.1.1:
-    resolution: {integrity: sha512-rts9RzUgLYqW4MxGAT6onQfQUJJU01qB4I1LfxvbUSk/+BZHjB7Qmp6L21D6E2Zubv3ZnpnKq05ThzgeQDUTQg==}
+  twitter-openapi-typescript@0.1.4:
+    resolution: {integrity: sha512-GYveHGtkzXkUQN/lKuOH8KFQDKQz6Mq80381HhDFLcCqkC2rCH7ThFcaLEYsZcJV82e1Ga4i5VnzyT+xud+RIQ==}
 
-  twitter-snap@0.1.1:
-    resolution: {integrity: sha512-HLTeKDHlQnxwDpaaMbwvLipr0yrEQDVLlXNGNNhqjwi/5XiBMDR6kUfG8p4O8JVa9EeJdScvuTp5j0AKBFT+lA==}
+  twitter-snap@0.2.1:
+    resolution: {integrity: sha512-cXLi+8INvBnxyRhBNM2nVYgK3TNzN0WfbKn2qzN/PFO3UHk6QlfxzEv5WJRN8ajsngVgtqStxjBTPW82UHAz/g==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -2498,6 +2506,27 @@ snapshots:
 
   '@noble/hashes@1.8.0': {}
 
+  '@oclif/core@5.1.10':
+    dependencies:
+      ansi-escapes: 4.3.2
+      ansis: 3.17.0
+      clean-stack: 3.0.1
+      cli-spinners: 2.9.2
+      debug: 4.4.3(supports-color@8.1.1)
+      ejs: 6.0.1
+      get-package-type: 0.1.0
+      indent-string: 4.0.0
+      lilconfig: 3.1.3
+      minimatch: 10.2.6
+      semver: 7.8.5
+      string-width: 4.2.3
+      supports-color: 8.1.1
+      tinyglobby: 0.2.17
+      widest-line: 3.1.0
+      wordwrap: 1.0.0
+      wrap-ansi: 7.0.0
+      wsl-utils: 0.4.0
+
   '@oclif/core@5.1.8':
     dependencies:
       ansi-escapes: 4.3.2
@@ -2519,9 +2548,9 @@ snapshots:
       wrap-ansi: 7.0.0
       wsl-utils: 0.4.0
 
-  '@oclif/plugin-help@7.0.4':
+  '@oclif/plugin-help@7.0.6':
     dependencies:
-      '@oclif/core': 5.1.8
+      '@oclif/core': 5.1.10
 
   '@oclif/plugin-plugins@7.0.8(supports-color@8.1.1)':
     dependencies:
@@ -2570,7 +2599,7 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@puppeteer/browsers@3.2.5(yauzl@2.10.0)':
+  '@puppeteer/browsers@3.2.6(yauzl@2.10.0)':
     dependencies:
       modern-tar: 0.8.6
       yargs: 18.2.0
@@ -2839,9 +2868,9 @@ snapshots:
 
   chalk@5.6.2: {}
 
-  chromium-bidi@157.0.8090-0(devtools-protocol@0.0.1696802):
+  chromium-bidi@157.0.8090-0(devtools-protocol@0.0.1704951):
     dependencies:
-      devtools-protocol: 0.0.1696802
+      devtools-protocol: 0.0.1704951
       mitt: 3.0.1
       zod: 4.6.7
 
@@ -2935,7 +2964,7 @@ snapshots:
 
   detect-libc@2.1.2: {}
 
-  devtools-protocol@0.0.1696802: {}
+  devtools-protocol@0.0.1704951: {}
 
   dezalgo@1.0.4:
     dependencies:
@@ -3446,6 +3475,8 @@ snapshots:
 
   picomatch@4.0.7: {}
 
+  pngjs@7.0.0: {}
+
   postcss-value-parser@4.2.0: {}
 
   postcss@8.5.30:
@@ -3460,11 +3491,11 @@ snapshots:
 
   proto-list@1.2.4: {}
 
-  puppeteer-core@25.14.0(yauzl@2.10.0):
+  puppeteer-core@25.16.0(yauzl@2.10.0):
     dependencies:
-      '@puppeteer/browsers': 3.2.5(yauzl@2.10.0)
-      chromium-bidi: 157.0.8090-0(devtools-protocol@0.0.1696802)
-      devtools-protocol: 0.0.1696802
+      '@puppeteer/browsers': 3.2.6(yauzl@2.10.0)
+      chromium-bidi: 157.0.8090-0(devtools-protocol@0.0.1704951)
+      devtools-protocol: 0.0.1704951
       typed-query-selector: 2.12.3
       webdriver-bidi-protocol: 1.0.1
       ws: 8.22.0
@@ -3474,13 +3505,13 @@ snapshots:
       - utf-8-validate
       - yauzl
 
-  puppeteer@25.14.0(yauzl@2.10.0):
+  puppeteer@25.16.0(yauzl@2.10.0):
     dependencies:
-      '@puppeteer/browsers': 3.2.5(yauzl@2.10.0)
-      chromium-bidi: 157.0.8090-0(devtools-protocol@0.0.1696802)
-      devtools-protocol: 0.0.1696802
+      '@puppeteer/browsers': 3.2.6(yauzl@2.10.0)
+      chromium-bidi: 157.0.8090-0(devtools-protocol@0.0.1704951)
+      devtools-protocol: 0.0.1704951
       lilconfig: 3.1.3
-      puppeteer-core: 25.14.0(yauzl@2.10.0)
+      puppeteer-core: 25.16.0(yauzl@2.10.0)
       typed-query-selector: 2.12.3
     transitivePeerDependencies:
       - bufferutil
@@ -3706,18 +3737,18 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  twitter-openapi-typescript-generated@0.1.1: {}
+  twitter-openapi-typescript-generated@0.1.4: {}
 
-  twitter-openapi-typescript@0.1.1:
+  twitter-openapi-typescript@0.1.4:
     dependencies:
-      twitter-openapi-typescript-generated: 0.1.1
+      twitter-openapi-typescript-generated: 0.1.4
       x-client-transaction-id-generater: 0.0.7
 
-  twitter-snap@0.1.1(supports-color@8.1.1)(yauzl@2.10.0):
+  twitter-snap@0.2.1(supports-color@8.1.1)(yauzl@2.10.0):
     dependencies:
       '@clack/prompts': 1.8.1
-      '@oclif/core': 5.1.8
-      '@oclif/plugin-help': 7.0.4
+      '@oclif/core': 5.1.10
+      '@oclif/plugin-help': 7.0.6
       '@oclif/plugin-plugins': 7.0.8(supports-color@8.1.1)
       '@oclif/plugin-warn-if-update-available': 4.0.3(supports-color@8.1.1)
       '@vercel/og': 0.11.1
@@ -3726,12 +3757,14 @@ snapshots:
       fflate: 0.8.3
       fluent-ffmpeg: 2.1.3
       graphemesplit: 2.6.0
+      linebreak: 1.1.0
       log-symbols: 7.0.1
       ora: 9.4.1
-      puppeteer: 25.14.0(yauzl@2.10.0)
+      pngjs: 7.0.0
+      puppeteer: 25.16.0(yauzl@2.10.0)
       react: 19.3.1
-      twitter-openapi-typescript: 0.1.1
-      twitter-openapi-typescript-generated: 0.1.1
+      twitter-openapi-typescript: 0.1.4
+      twitter-openapi-typescript-generated: 0.1.4
     transitivePeerDependencies:
       - bufferutil
       - proxy-agent
