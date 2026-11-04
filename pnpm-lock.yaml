@@ -200,8 +200,8 @@ importers:
         specifier: ^1.3.5
         version: 1.3.5(hono@4.13.13)(zod@4.6.7)
       twitter-snap:
-        specifier: ^0.2.1
-        version: 0.2.1(supports-color@8.1.1)(yauzl@2.10.0)
+        specifier: ^0.3.0
+        version: 0.3.0(supports-color@8.1.1)(yauzl@2.10.0)
       zod:
         specifier: ^4.6.7
         version: 4.6.7
@@ -663,20 +663,16 @@ packages:
     resolution: {integrity: sha512-iO+Ga2ve3x0QDeqKVvVEYbb+YPVV7A0rbliCO+ZcUdZ/5Sfv+kHz2G247ExAw5aSAEXn9gX6H4jjON2mcJivqw==}
     engines: {node: '>=22.0.0'}
 
-  '@oclif/core@5.1.8':
-    resolution: {integrity: sha512-K1b3zdmbwANV9Jk+QN8aFvnXY/IhfWRnmhWn/V57h7alzbtck2je2DVVf0EkA01FokreF7Tpe+7hiGS87q30SA==}
-    engines: {node: '>=22.0.0'}
-
   '@oclif/plugin-help@7.0.6':
     resolution: {integrity: sha512-0p9fM8OtQAZi68arvkfvUzbgiVpXGu6fIgkcvTc2wbuIHfDCs6benPU2uxXxfU2yJ0BWJw6cJbCZQN9cK4H6HA==}
     engines: {node: '>=22.0.0'}
 
-  '@oclif/plugin-plugins@7.0.8':
-    resolution: {integrity: sha512-qFliLKkVsC53yIb/FCNFEijetvvJHV4q5Vi/zhX3Lwj8KZOpNK2ST80xjCQpWTN3gKwXna901QxAeolrH1Y94Q==}
+  '@oclif/plugin-plugins@7.0.13':
+    resolution: {integrity: sha512-NQCbUWFYQyIHZHutTYBsfmT299yCkrJqu4AarUXjm7fAj4ss6bkgk8hqHuNqI1WGEf1kQhb4qjzSM0HfLIA6uw==}
     engines: {node: '>=22.0.0'}
 
-  '@oclif/plugin-warn-if-update-available@4.0.3':
-    resolution: {integrity: sha512-M11GUdHKOoSAguv7eBBgtgUVuvaH5nlIlZA1kvOmSIpjrDQEvZwWBjKcyXb0icNnxdGbpaItILAOkKqVHz/ptw==}
+  '@oclif/plugin-warn-if-update-available@4.0.5':
+    resolution: {integrity: sha512-zbfnLiYcIOuplVpASnYvMbU7zFbYNO86MDbLNjz2s18ofXcSFaV4U/jx3mBNj6rqW9DMP17UY8mseovdBfRFyA==}
     engines: {node: '>=22.0.0'}
 
   '@oxc-project/types@0.154.0':
@@ -1187,10 +1183,6 @@ packages:
   config-chain@1.1.13:
     resolution: {integrity: sha512-qj+f8APARXHrM0hraqXYb2/bOVSV4PvJQlNZ/DVj0QrmNM2q2euizkeuVckQ57J+W0mRH6Hvi+k50M4Jul2VRQ==}
 
-  content-type@1.0.5:
-    resolution: {integrity: sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA==}
-    engines: {node: '>= 0.6'}
-
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
@@ -1292,9 +1284,6 @@ packages:
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
-
-  error-ex@1.3.4:
-    resolution: {integrity: sha512-sqQamAnR14VgCr1A618A3sGrygcpK+HEbenA/HiEAkkUwcZIIB/tgWqHFxWgOyDh4nB4JCRimh79dR5Ywc9MDQ==}
 
   es-define-property@1.0.1:
     resolution: {integrity: sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==}
@@ -1487,19 +1476,12 @@ packages:
     resolution: {integrity: sha512-puUZAUKT5m8Zzvs72XWy3HtvVbTWljRE66cP60bxJzAqf2DgICo7lYTY2IHUmLnNpjYvw5bvmoHvPc0QO2a62w==}
     engines: {node: ^16.14.0 || >=18.0.0}
 
-  http-call@5.3.0:
-    resolution: {integrity: sha512-ahwimsC23ICE4kPl9xTBjKB4inbRaeLyZeRunC/1Jy/Z6X8tv22MEAjK+KBOMSVLaqXPTTmd8638waVIKLGx2w==}
-    engines: {node: '>=8.0.0'}
-
   indent-string@4.0.0:
     resolution: {integrity: sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==}
     engines: {node: '>=8'}
 
   ini@1.3.8:
     resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
-
-  is-arrayish@0.2.1:
-    resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
 
   is-docker@3.0.0:
     resolution: {integrity: sha512-eljcgEDlEns/7AXFosB5K/2nCM4P7FQPkGc/DWLy5rmFEWvZayGrik1d9/QIY5nJ4f9YsVvBkA6kJpHn9rISdQ==}
@@ -1522,14 +1504,6 @@ packages:
   is-promise@2.2.2:
     resolution: {integrity: sha512-+lP4/6lKUBfQjZ2pdxThZvLUAafmZb8OAxFb8XXtiQmS35INgr85hdOGoEs124ez1FCnZJt6jau/T+alh58QFQ==}
 
-  is-retry-allowed@1.2.0:
-    resolution: {integrity: sha512-RUbUeKwvm3XG2VYamhJL1xFktgjvPzL0Hq8C+6yrWIswDy3BIXGqCxhxkc30N9jqK311gVU137K8Ei55/zVJRg==}
-    engines: {node: '>=0.10.0'}
-
-  is-stream@2.0.1:
-    resolution: {integrity: sha512-hFoiJiTl63nn+kstHGBtewWSKnQLpyb155KHheA1l39uvtO9nWIop1p3udqPcUd/xbF1VLMO4n7OI6p7RbngDg==}
-    engines: {node: '>=8'}
-
   is-unicode-supported@2.1.0:
     resolution: {integrity: sha512-mE00Gnza5EEB3Ds0HfMyllZzbBrmLOX3vfWoj9A9PEnTfratQ/BcaJOuMhnkhjXvb2+FkY3VuHqtAGpTPmglFQ==}
     engines: {node: '>=18'}
@@ -1547,9 +1521,6 @@ packages:
 
   js-base64@3.9.4:
     resolution: {integrity: sha512-PtOMXpEGuP0RRiRXsjzHzl44dMHxSu2CPvAhinupR1tBa88me+1DPqsobl7eupn5UukjLkln1ZnAOAOXOrYG0Q==}
-
-  json-parse-better-errors@1.0.2:
-    resolution: {integrity: sha512-mrqyZKfX5EhL7hvqcV6WG1yYjnjeuYDzDhhcAAUrq8Po85NBQBJP+ZDUT75qZQ98IkUoBqdkExkukOU7Ts2wrw==}
 
   lightningcss-android-arm64@1.33.0:
     resolution: {integrity: sha512-gEpRTalKdosp4Bb8qWtc2iOgE5SeIHlpS1up9bFq2wAyYhl1UdTObYiHe98zEM9SQvSoqQZ1IQD0JNpg3Ml5pg==}
@@ -1823,10 +1794,6 @@ packages:
   parse-css-color@0.2.1:
     resolution: {integrity: sha512-bwS/GGIFV3b6KS4uwpzCFj4w297Yl3uqnSgIPsoQkx7GMLROXfMnWvxfNkL0oh8HVhZA4hvJoEoEIqonfJ3BWg==}
 
-  parse-json@4.0.0:
-    resolution: {integrity: sha512-aOIos8bujGN93/8Ox/jPLh7RwVnPEysynVFE+fQZyg6jKELEHwzgKdLRFHUgXJL6kylijVSBC4BvN9OmsB48Rw==}
-    engines: {node: '>=4'}
-
   path-key@4.0.0:
     resolution: {integrity: sha512-haREypq7xkM7ErfgIyA0z+Bj4AGKlMSdlQE2jvJo6huWD1EdkKYV+G/T4nq0YEF2vgTT8kqMFKo1uHn950r4SQ==}
     engines: {node: '>=12'}
@@ -1898,9 +1865,6 @@ packages:
     resolution: {integrity: sha512-eTBTTqMR6uHKLgcUqpJP8ntzDI6V4LYA8negAMBEI7gkgVvOdrx6VsvS2Ym+83KhOPdLCHWJu0w7UQFJZhHKNw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
-
-  safe-buffer@5.2.1:
-    resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
 
   satori@0.25.0:
     resolution: {integrity: sha512-utINfLxrYrmSnLvxFT4ZwgwWa8KOjrz7ans32V5wItgHVmzESl/9i33nE38uG0miycab8hUqQtDlOpqrIpB/iw==}
@@ -2023,17 +1987,14 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  tunnel-agent@0.6.0:
-    resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
+  twitter-openapi-typescript-generated@0.1.5:
+    resolution: {integrity: sha512-B74ffHYJjhcpkkTzt9+UpwzgKdzN9guYsT/gKnJS+0Fp8+Y7N2HVFYgv3C1EWjDUAP4/ohY2/S2Xdql7+JSi6A==}
 
-  twitter-openapi-typescript-generated@0.1.4:
-    resolution: {integrity: sha512-9AESaCfQhhcA1VAjVANLvWPODzAmjGwwHx0vQv8WZYFbJCHcj/V6Kw2xT0iznUfDSq40Egc481lQ4GUCcVNqUg==}
+  twitter-openapi-typescript@0.1.6:
+    resolution: {integrity: sha512-1JHEu3YQe2Oqqw5shbjKZK2bvedR17nxdrCSaj6Hx6niv3Bgjn432DYD9rgIuPo+aHf3kOBxdYG46SmU4a3UoQ==}
 
-  twitter-openapi-typescript@0.1.4:
-    resolution: {integrity: sha512-GYveHGtkzXkUQN/lKuOH8KFQDKQz6Mq80381HhDFLcCqkC2rCH7ThFcaLEYsZcJV82e1Ga4i5VnzyT+xud+RIQ==}
-
-  twitter-snap@0.2.1:
-    resolution: {integrity: sha512-cXLi+8INvBnxyRhBNM2nVYgK3TNzN0WfbKn2qzN/PFO3UHk6QlfxzEv5WJRN8ajsngVgtqStxjBTPW82UHAz/g==}
+  twitter-snap@0.3.0:
+    resolution: {integrity: sha512-z0jDjPE1o/dRGHbOIAVd3Gtdnjpr90uyA4YOHtOqsNrnvCKNgy2yKKQiT61aUhD1ygKlYYjURKlE571G28z1BA==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -2054,6 +2015,10 @@ packages:
 
   undici-types@8.9.0:
     resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
+
+  undici@7.30.1:
+    resolution: {integrity: sha512-03KrMbjIFDWQR5RNPrSw3bd1r12JpyFQl9/yxjUbJtqkjmllqC5lFjZh6ujeuJCKr8EOQvRW872Oy/az+nLYxg==}
+    engines: {node: '>=20.18.1'}
 
   unicode-trie@2.0.0:
     resolution: {integrity: sha512-x7bc76x0bm4prf1VLg79uhAzKw8DVboClSN5VxJuQ+LKDOVEW9CdH+VY7SP+vX7xCYQqzzgQpFqz15zeLvAtZQ==}
@@ -2527,34 +2492,13 @@ snapshots:
       wrap-ansi: 7.0.0
       wsl-utils: 0.4.0
 
-  '@oclif/core@5.1.8':
-    dependencies:
-      ansi-escapes: 4.3.2
-      ansis: 3.17.0
-      clean-stack: 3.0.1
-      cli-spinners: 2.9.2
-      debug: 4.4.3(supports-color@8.1.1)
-      ejs: 6.0.1
-      get-package-type: 0.1.0
-      indent-string: 4.0.0
-      lilconfig: 3.1.3
-      minimatch: 10.2.6
-      semver: 7.8.5
-      string-width: 4.2.3
-      supports-color: 8.1.1
-      tinyglobby: 0.2.17
-      widest-line: 3.1.0
-      wordwrap: 1.0.0
-      wrap-ansi: 7.0.0
-      wsl-utils: 0.4.0
-
   '@oclif/plugin-help@7.0.6':
     dependencies:
       '@oclif/core': 5.1.10
 
-  '@oclif/plugin-plugins@7.0.8(supports-color@8.1.1)':
+  '@oclif/plugin-plugins@7.0.13(supports-color@8.1.1)':
     dependencies:
-      '@oclif/core': 5.1.8
+      '@oclif/core': 5.1.10
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
       npm: 11.21.0
@@ -2568,14 +2512,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@oclif/plugin-warn-if-update-available@4.0.3(supports-color@8.1.1)':
+  '@oclif/plugin-warn-if-update-available@4.0.5(supports-color@8.1.1)':
     dependencies:
-      '@oclif/core': 5.1.8
+      '@oclif/core': 5.1.10
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
-      http-call: 5.3.0(supports-color@8.1.1)
       lodash: 4.18.1
       registry-auth-token: 5.1.1
+      undici: 7.30.1
     transitivePeerDependencies:
       - supports-color
 
@@ -2917,8 +2861,6 @@ snapshots:
       ini: 1.3.8
       proto-list: 1.2.4
 
-  content-type@1.0.5: {}
-
   convert-source-map@2.0.0: {}
 
   cookie-signature@1.2.2: {}
@@ -3006,10 +2948,6 @@ snapshots:
   emoji-regex@8.0.0: {}
 
   entities@4.5.0: {}
-
-  error-ex@1.3.4:
-    dependencies:
-      is-arrayish: 0.2.1
 
   es-define-property@1.0.1: {}
 
@@ -3238,22 +3176,9 @@ snapshots:
     dependencies:
       lru-cache: 10.4.3
 
-  http-call@5.3.0(supports-color@8.1.1):
-    dependencies:
-      content-type: 1.0.5
-      debug: 4.4.3(supports-color@8.1.1)
-      is-retry-allowed: 1.2.0
-      is-stream: 2.0.1
-      parse-json: 4.0.0
-      tunnel-agent: 0.6.0
-    transitivePeerDependencies:
-      - supports-color
-
   indent-string@4.0.0: {}
 
   ini@1.3.8: {}
-
-  is-arrayish@0.2.1: {}
 
   is-docker@3.0.0: {}
 
@@ -3267,10 +3192,6 @@ snapshots:
 
   is-promise@2.2.2: {}
 
-  is-retry-allowed@1.2.0: {}
-
-  is-stream@2.0.1: {}
-
   is-unicode-supported@2.1.0: {}
 
   is-wsl@3.1.1:
@@ -3282,8 +3203,6 @@ snapshots:
   isexe@3.1.5: {}
 
   js-base64@3.9.4: {}
-
-  json-parse-better-errors@1.0.2: {}
 
   lightningcss-android-arm64@1.33.0:
     optional: true
@@ -3459,11 +3378,6 @@ snapshots:
       color-name: 1.1.4
       hex-rgb: 4.3.0
 
-  parse-json@4.0.0:
-    dependencies:
-      error-ex: 1.3.4
-      json-parse-better-errors: 1.0.2
-
   path-key@4.0.0: {}
 
   pathe@2.0.3: {}
@@ -3557,8 +3471,6 @@ snapshots:
       '@rolldown/binding-openharmony-arm64': 1.2.14
       '@rolldown/binding-win32-arm64-msvc': 1.2.14
       '@rolldown/binding-win32-x64-msvc': 1.2.14
-
-  safe-buffer@5.2.1: {}
 
   satori@0.25.0:
     dependencies:
@@ -3733,24 +3645,20 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  tunnel-agent@0.6.0:
-    dependencies:
-      safe-buffer: 5.2.1
+  twitter-openapi-typescript-generated@0.1.5: {}
 
-  twitter-openapi-typescript-generated@0.1.4: {}
-
-  twitter-openapi-typescript@0.1.4:
+  twitter-openapi-typescript@0.1.6:
     dependencies:
-      twitter-openapi-typescript-generated: 0.1.4
+      twitter-openapi-typescript-generated: 0.1.5
       x-client-transaction-id-generater: 0.0.7
 
-  twitter-snap@0.2.1(supports-color@8.1.1)(yauzl@2.10.0):
+  twitter-snap@0.3.0(supports-color@8.1.1)(yauzl@2.10.0):
     dependencies:
       '@clack/prompts': 1.8.1
       '@oclif/core': 5.1.10
       '@oclif/plugin-help': 7.0.6
-      '@oclif/plugin-plugins': 7.0.8(supports-color@8.1.1)
-      '@oclif/plugin-warn-if-update-available': 4.0.3(supports-color@8.1.1)
+      '@oclif/plugin-plugins': 7.0.13(supports-color@8.1.1)
+      '@oclif/plugin-warn-if-update-available': 4.0.5(supports-color@8.1.1)
       '@vercel/og': 0.11.1
       cli-color: 2.0.4
       escape-string-regexp: 5.0.0
@@ -3763,8 +3671,8 @@ snapshots:
       pngjs: 7.0.0
       puppeteer: 25.16.0(yauzl@2.10.0)
       react: 19.3.1
-      twitter-openapi-typescript: 0.1.4
-      twitter-openapi-typescript-generated: 0.1.4
+      twitter-openapi-typescript: 0.1.6
+      twitter-openapi-typescript-generated: 0.1.5
     transitivePeerDependencies:
       - bufferutil
       - proxy-agent
@@ -3802,6 +3710,8 @@ snapshots:
       '@typescript/typescript-win32-x64': 7.0.2
 
   undici-types@8.9.0: {}
+
+  undici@7.30.1: {}
 
   unicode-trie@2.0.0:
     dependencies:
