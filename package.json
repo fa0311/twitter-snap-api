@@ -38,7 +38,7 @@
     "@biomejs/biome": "^2.5.15",
     "@types/node": "^26.6.5",
     "@types/supertest": "^7.2.1",
-    "@vitest/ui": "^5.0.4",
+    "@vitest/ui": "^5.0.5",
     "supertest": "^7.3.1",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
