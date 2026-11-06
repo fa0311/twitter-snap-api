@@ -44,7 +44,7 @@ export const createTwitterSnapClient = async (config: createTwitterSnapClientPar
       sessionType: "file",
       callback: async (run) => {
         const output = await run({
-          ffmpegTimeout: 30000,
+          ffmpegTimeout: 240, // seconds
           output: `${outputDir}/${rand}/{id}.{if-photo:png:mp4}`,
           theme: "RenderOceanBlueColor",
           scale: 2,
